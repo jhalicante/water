@@ -1,0 +1,37 @@
+==================================================
+[Customer] :: Searching of Water station 
+
+SELECT
+    user_accounts.fname as CustomerFname,
+    user_accounts.lname as CustomerLname,
+    user_accounts.fname as DeliveryFname,
+    user_accounts.lname as DeliveryLname,
+    orders.transaction_id,
+    orders.customer_id,
+    orders.delivery_id,
+    orders.quantity,
+    orders.status,
+    orders.description
+FROM
+    user_accounts
+INNER JOIN orders ON orders.customer_id = user_accounts.uid 
+WHERE
+    user_accounts.uid = 'asdadkasjd' && user_accounts.user_type='customer'
+
+
+
+==================================================
+[Delivery] :: Orders
+
+SELECT
+    user_accounts.fname as CustomerFname,
+    user_accounts.lname as CustomerLname,
+    user_accounts.fname as DeliveryFname,
+    user_accounts.lname as DeliveryLname,
+    orders.customer_id,
+    orders.delivery_id
+FROM
+    user_accounts
+INNER JOIN orders ON orders.delivery_id = user_accounts.uid 
+WHERE
+    user_accounts.uid = 'asdasda' && user_accounts.user_type='delivery'
